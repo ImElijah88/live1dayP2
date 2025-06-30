@@ -7,6 +7,8 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Play/Pause icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -56,26 +58,49 @@
             background-color: rgba(245, 197, 24, 0.1); /* Transparent gold-ish */
             border: 2px solid #fcd34d; /* Gold border */
         }
-        /* Attempt to style audio controls - highly browser dependent */
-        /* Note: Direct styling of native audio player controls is limited and inconsistent across browsers. */
-        /* These styles target WebKit browsers (Chrome, Safari). Firefox/Edge may render differently. */
-        audio::-webkit-media-controls-panel {
-            background-color: rgba(245, 197, 24, 0.2); /* Transparent gold for controls background */
+        /* Custom Player Specific Styles */
+        .custom-audio-player {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background-color: rgba(245, 197, 24, 0.2); /* More transparent gold for inner player */
         }
-        audio::-webkit-media-controls-play-button,
-        audio::-webkit-media-controls-current-time-display,
-        audio::-webkit-media-controls-time-remaining-display,
-        audio::-webkit-media-controls-timeline,
-        audio::-webkit-media-controls-volume-slider {
-            /* Attempting to set color for controls, including time display to black */
-            color: black !important; /* Set to black, using !important for higher specificity */
-            fill: black !important; /* For SVG icons within controls */
-            /* Ensure text for time displays is also black */
-            -webkit-text-fill-color: black !important;
+        .play-pause-btn {
+            background-color: #fcd34d; /* Gold button */
+            color: #1e1b4b; /* Dark text for button */
+            padding: 0.75rem 1rem;
+            border-radius: 9999px; /* Fully rounded */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        audio {
-            /* Fallback for general audio element if specific controls styling doesn't work */
-            color: black; /* This might affect some visible elements */
+        .play-pause-btn:hover {
+            background-color: #fbbf24; /* Slightly darker gold on hover */
+        }
+        .progress-bar-container {
+            flex-grow: 1;
+            height: 8px;
+            background-color: rgba(0, 0, 0, 0.3); /* Dark transparent background for track */
+            border-radius: 4px;
+            margin: 0 1rem;
+            cursor: pointer;
+            position: relative;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #fcd34d; /* Gold progress fill */
+            border-radius: 4px;
+        }
+        .time-display {
+            color: black; /* Force time numbers to be black */
+            font-size: 0.9rem;
+            min-width: 60px; /* Ensure space for numbers */
+            text-align: center;
         }
     </style>
 </head>
@@ -90,10 +115,21 @@
         <!-- Audio Player Section -->
         <div class="audio-player-container p-4 mb-8 rounded-xl w-full md:w-3/4 lg:w-1/2 mx-auto">
             <h3 class="text-xl font-semibold section-title mb-3">Phase 2 Audio Overview</h3>
-            <audio controls class="w-full">
-                <source src="audio.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+            <div class="custom-audio-player">
+                <audio id="audioPlayer" src="audio.mp3" preload="metadata"></audio>
+                
+                <button id="playPauseBtn" class="play-pause-btn">
+                    <i id="playPauseIcon" class="fas fa-play"></i>
+                </button>
+
+                <span id="currentTime" class="time-display">0:00</span>
+                
+                <div id="progressBarContainer" class="progress-bar-container">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+                
+                <span id="duration" class="time-display">0:00</span>
+            </div>
             <p class="text-sm paragraph-text mt-2">Listen to a summary of this phase's objectives and tasks.</p>
         </div>
         <!-- End Audio Player Section -->
@@ -344,5 +380,65 @@
             </section>
         </main>
     </div>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playPauseIcon = document.getElementById('playPauseIcon');
+        const progressBar = document.getElementById('progressBar');
+        const progressBarContainer = document.getElementById('progressBarContainer');
+        const currentTimeSpan = document.getElementById('currentTime');
+        const durationSpan = document.getElementById('duration');
+
+        // Function to format time
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60);
+            return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+        }
+
+        // Event listener for when audio metadata is loaded
+        audioPlayer.addEventListener('loadedmetadata', () => {
+            durationSpan.textContent = formatTime(audioPlayer.duration);
+            currentTimeSpan.textContent = formatTime(audioPlayer.currentTime); // Initialize current time
+        });
+
+        // Event listener for play/pause button
+        playPauseBtn.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseIcon.classList.remove('fa-play');
+                playPauseIcon.classList.add('fa-pause');
+            } else {
+                audioPlayer.pause();
+                playPauseIcon.classList.remove('fa-pause');
+                playPauseIcon.classList.add('fa-play');
+            }
+        });
+
+        // Event listener for time updates
+        audioPlayer.addEventListener('timeupdate', () => {
+            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            progressBar.style.width = `${progress}%`;
+            currentTimeSpan.textContent = formatTime(audioPlayer.currentTime);
+        });
+
+        // Event listener for clicking on the progress bar to seek
+        progressBarContainer.addEventListener('click', (e) => {
+            const clickX = e.offsetX; // Get X position of click relative to container
+            const containerWidth = progressBarContainer.offsetWidth; // Get total width of container
+            const seekTime = (clickX / containerWidth) * audioPlayer.duration;
+            audioPlayer.currentTime = seekTime;
+        });
+
+        // Event listener for when audio ends
+        audioPlayer.addEventListener('ended', () => {
+            playPauseIcon.classList.remove('fa-pause');
+            playPauseIcon.classList.add('fa-play');
+            audioPlayer.currentTime = 0; // Reset to beginning
+            progressBar.style.width = '0%'; // Reset progress bar
+            currentTimeSpan.textContent = '0:00'; // Reset current time display
+        });
+    </script>
 </body>
 </html>
