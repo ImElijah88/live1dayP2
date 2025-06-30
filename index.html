@@ -57,6 +57,8 @@
             border: 2px solid #fcd34d; /* Gold border */
         }
         /* Attempt to style audio controls - highly browser dependent */
+        /* Note: Direct styling of native audio player controls is limited and inconsistent across browsers. */
+        /* These styles target WebKit browsers (Chrome, Safari). Firefox/Edge may render differently. */
         audio::-webkit-media-controls-panel {
             background-color: rgba(245, 197, 24, 0.2); /* Transparent gold for controls background */
         }
@@ -65,7 +67,15 @@
         audio::-webkit-media-controls-time-remaining-display,
         audio::-webkit-media-controls-timeline,
         audio::-webkit-media-controls-volume-slider {
-            color: #fcd34d; /* Gold for control elements (may not work on all) */
+            /* Attempting to set color for controls, including time display to black */
+            color: black !important; /* Set to black, using !important for higher specificity */
+            fill: black !important; /* For SVG icons within controls */
+            /* Ensure text for time displays is also black */
+            -webkit-text-fill-color: black !important;
+        }
+        audio {
+            /* Fallback for general audio element if specific controls styling doesn't work */
+            color: black; /* This might affect some visible elements */
         }
     </style>
 </head>
