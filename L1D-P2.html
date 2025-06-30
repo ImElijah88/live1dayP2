@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 2: On-Location Production - Episode 1 Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark blue-gray background */
+            color: #e2e8f0; /* Light text for general content */
+        }
+        /* Custom styles for dark theme with gold and lilac accents */
+        .header-h1 {
+            color: #f8f8f2; /* Nearly white for main title */
+        }
+        .header-h2 {
+            color: #d8b4fe; /* Lilac-ish purple for phase title */
+        }
+        .paragraph-text {
+            color: #a0aec0; /* Slightly darker light gray for paragraphs */
+        }
+        .section-card {
+            background-color: #2d3748; /* Darker gray for section cards */
+            border-color: #4a5568; /* Subtle border for sections */
+        }
+        .section-title {
+            color: #e2e8f0; /* Light text for section titles */
+        }
+        .section-subtitle {
+            color: #cbd5e0; /* Slightly darker light text for subtitles */
+        }
+        .issue-card {
+            background-color: #4a5568; /* Even darker gray for individual issue cards */
+            border-color: #6e7380; /* Medium gray border for issue cards */
+        }
+        .issue-title {
+            color: #f8f8f2; /* White-ish for issue titles */
+        }
+        .issue-description {
+            color: #cbd5e0; /* Light gray for issue descriptions */
+        }
+        .status-generated {
+            background-color: #fcd34d; /* Amber-300 for gold background */
+            color: #78350f; /* Dark brown for gold text, ensuring contrast */
+        }
+        .label-badge {
+            background-color: #c084fc; /* Purple-400 for lilac background */
+            color: #1e1b4b; /* Deep purple for lilac text */
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+    <div class="max-w-7xl mx-auto bg-gray-900 shadow-xl rounded-xl p-6 sm:p-8 lg:p-10">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-bold header-h1 mb-2">Live One Day Project</h1>
+            <h2 class="text-2xl sm:text-3xl font-semibold header-h2">Phase 2: On-Location Production - Episode 1</h2>
+            <p class="paragraph-text mt-2 text-lg">Tracking all issues for efficient fieldwork and content capture.</p>
+        </header>
+
+        <main class="space-y-10">
+            <!-- Section: Arrival & Gentleman Lifestyle Vlog -->
+            <section class="p-6 rounded-lg shadow-md section-card">
+                <h3 class="text-xl sm:text-2xl font-bold section-title mb-4 pb-2 border-b section-card">
+                    Arrival & Gentleman Lifestyle Vlog <span class="text-base font-normal section-subtitle">(Corresponds to Episode Phase 2)</span>
+                </h3>
+                <div class="space-y-4">
+                    <!-- Issue 2.1 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.1 Travel & Arrival</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Execute all planned travel logistics, including flights and ground transport, ensuring a smooth and timely arrival at the first filming location. Confirm all team members and essential gear have arrived safely and are accounted for.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Travel</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Logistics</span>
+                        </div>
+                    </div>
+                    <!-- Issue 2.2 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.2 Car Rental & Hotel Check-in</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Complete the rental car pickup process, verifying vehicle condition and necessary documentation. Proceed to the pre-booked hotel for check-in, securing rooms and ensuring all team members are settled and have access to amenities.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Travel</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Logistics</span>
+                        </div>
+                    </div>
+                    <!-- Issue 2.3 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.3 Film "Gentleman Prep" Sequences</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Capture cinematic sequences related to the "Gentleman Prep" theme, which may include grooming routines, wardrobe selection, or other pre-immersion activities designed to establish the project's aesthetic and participant's readiness.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Filming</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Content</span>
+                        </div>
+                    </div>
+                    <!-- Issue 2.4 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.4 Host & Wife Settle In</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Ensure the host and their partner are comfortably settled into their designated arrangements. This includes confirming their understanding of the schedule, answering any immediate questions, and ensuring they feel at ease before filming commences.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Logistics</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Car Ride Interview -->
+            <section class="p-6 rounded-lg shadow-md section-card">
+                <h3 class="text-xl sm:text-2xl font-bold section-title mb-4 pb-2 border-b section-card">
+                    Car Ride Interview <span class="text-base font-normal section-subtitle">(Corresponds to Episode Phase 3)</span>
+                </h3>
+                <div class="space-y-4">
+                    <!-- Issue 2.5 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.5 Mobile Studio Setup</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Configure all necessary audio and visual equipment within the vehicle to create an optimal "mobile studio" environment for the car ride interview. This includes camera placement, microphone setup, and lighting adjustments.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Filming</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Tech Setup</span>
+                        </div>
+                    </div>
+                    <!-- Issue 2.6 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.6 Conduct Car Ride Interview</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Facilitate and conduct the pre-planned interview with the participant and/or host during the car ride, utilizing prepared questions while allowing for organic conversation and candid moments.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Filming</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Content</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Interaction</span>
+                        </div>
+                    </div>
+                    <!-- Issue 2.7 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.7 Audio & Visual Capture (Car Interview)</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Ensure high-quality audio recording and visual capture throughout the car ride interview. Continuously monitor sound levels, focus, exposure, and framing to secure optimal footage.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Filming</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Audio/Visual</span>
+                        </div>
+                    </div>
+                    <!-- Issue 2.8 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.8 Utilize Translation Tools</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Effectively use any necessary translation tools or services (e.g., live translator, translation apps) during the car interview to facilitate clear communication between the participant, host, and production team.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Filming</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Communication</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: 24 Hours Immersion -->
+            <section class="p-6 rounded-lg shadow-md section-card">
+                <h3 class="text-xl sm:text-2xl font-bold section-title mb-4 pb-2 border-b section-card">
+                    24 Hours Immersion <span class="text-base font-normal section-subtitle">(Corresponds to Episode Phase 4)</span>
+                </h3>
+                <div class="space-y-4">
+                    <!-- Issue 2.9 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.9 Initial Introduction (Immersion)</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Film the initial introduction scene where the participant is formally introduced to the immersion host and family, capturing first impressions and the start of the immersive experience.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Filming</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Content</span>
+                        </div>
+                    </div>
+                    <!-- Issue 2.10 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.10 Guide Departure & Car Return</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Coordinate the departure of the local guide/fixer and the return of the rental car as planned, marking the beginning of the true 24-hour unassisted immersion period for the participant.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Logistics</span>
+                        </div>
+                    </div>
+                    <!-- Issue 2.11 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.11 Begin 24 Hours Immersion</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Officially commence the 24-hour immersion period, during which the participant lives entirely with the host family, fully engaging in their daily routines and cultural practices without direct intervention from the main production team.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Filming</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Immersion</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Core Content</span>
+                        </div>
+                    </div>
+                    <!-- Issue 2.12 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.12 Capture Daily Life (Immersion)</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Systematically capture the participant's daily activities, interactions, and experiences throughout the 24-hour immersion period, focusing on authentic moments and key cultural insights as they unfold.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Filming</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Content</span>
+                        </div>
+                    </div>
+                    <!-- Issue 2.13 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.13 Maintain Walkie-Talkie Communication</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Ensure continuous and discreet communication with the participant (and potentially a designated local contact) via walkie-talkies or other agreed-upon devices, for safety, logistical checks, and essential updates without disrupting the immersion.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Communication</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Logistics</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Post-Immersion Interview & Debrief -->
+            <section class="p-6 rounded-lg shadow-md section-card">
+                <h3 class="text-xl sm:text-2xl font-bold section-title mb-4 pb-2 border-b section-card">
+                    Post-Immersion Interview & Debrief <span class="text-base font-normal section-subtitle">(Corresponds to Episode Phase 5)</span>
+                </h3>
+                <div class="space-y-4">
+                    <!-- Issue 2.14 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.14 Host Pickup & Farewell (Immersion End)</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Facilitate the smooth pickup of the participant from the immersion host's location. Capture the farewells, expressing gratitude to the host family for their participation and hospitality.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Logistics</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Relationship</span>
+                        </div>
+                    </div>
+                    <!-- Issue 2.15 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.15 Return to Hotel & Reunite</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Transport the participant and team back to the hotel. Ensure everyone is safely reunited and has an opportunity to debrief informally on the immediate post-immersion experience.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Logistics</span>
+                        </div>
+                    </div>
+                    <!-- Issue 2.16 -->
+                    <div class="p-4 rounded-md shadow-sm border issue-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-lg font-semibold issue-title">Issue: 2.16 Conduct Post-Immersion Reflection Interview</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium status-generated">Status: Generated</span>
+                        </div>
+                        <p class="issue-description mb-2">Set up and conduct a formal interview with the participant to capture their immediate reflections, insights, challenges, and emotional responses from the 24-hour immersion experience.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Phase 2</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Filming</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Content</span>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium label-badge">Reflection</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
