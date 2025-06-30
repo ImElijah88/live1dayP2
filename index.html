@@ -51,6 +51,22 @@
             background-color: #c084fc; /* Purple-400 for lilac background */
             color: #1e1b4b; /* Deep purple for lilac text */
         }
+        /* Style for the custom audio player container */
+        .audio-player-container {
+            background-color: rgba(245, 197, 24, 0.1); /* Transparent gold-ish */
+            border: 2px solid #fcd34d; /* Gold border */
+        }
+        /* Attempt to style audio controls - highly browser dependent */
+        audio::-webkit-media-controls-panel {
+            background-color: rgba(245, 197, 24, 0.2); /* Transparent gold for controls background */
+        }
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display,
+        audio::-webkit-media-controls-timeline,
+        audio::-webkit-media-controls-volume-slider {
+            color: #fcd34d; /* Gold for control elements (may not work on all) */
+        }
     </style>
 </head>
 <body class="p-4 sm:p-6 md:p-8">
@@ -60,6 +76,17 @@
             <h2 class="text-2xl sm:text-3xl font-semibold header-h2">Phase 2: On-Location Production - Episode 1</h2>
             <p class="paragraph-text mt-2 text-lg">Tracking all issues for efficient fieldwork and content capture.</p>
         </header>
+
+        <!-- Audio Player Section -->
+        <div class="audio-player-container p-4 mb-8 rounded-xl w-full md:w-3/4 lg:w-1/2 mx-auto">
+            <h3 class="text-xl font-semibold section-title mb-3">Phase 2 Audio Overview</h3>
+            <audio controls class="w-full">
+                <source src="audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p class="text-sm paragraph-text mt-2">Listen to a summary of this phase's objectives and tasks.</p>
+        </div>
+        <!-- End Audio Player Section -->
 
         <main class="space-y-10">
             <!-- Section: Arrival & Gentleman Lifestyle Vlog -->
